@@ -17,7 +17,14 @@ const criaClientes = (nome, email) => {
   }).then((resposta) => resposta.body);
 };
 
+const removeClientes = (id) => {
+  return fetch(`http://localhost:3000/${id}profile`, {
+    method: "DELETE",
+  });
+};
+
 export const clienteService = {
   listaClientes,
   criaClientes,
+  removeClientes,
 };
